@@ -33,11 +33,11 @@ E verifico se o tipo de curso é "${TYPE}"
 
 E verifico se a data foi cadastrada com a data atual
     ${DATE}    Get Current Date  result_format=%d/%m/%Y
-    Element Should Contain    xpath=//div[@class='col-12 col-lg-6 mt-2'][contains(.,'Data prevista de inicio: ${DATE} Alterar')]    ${DATE}
+    Element Should Contain    xpath=//div[@class='col-12 col-lg-6 mt-2'][contains(.,'Data prevista de início: ${DATE} Alterar')]    ${DATE}
 
 E verifico se a data prevista final está correta
-    ${FINISH_DATE}    Get Current Date    increment=6 day  result_format=%d/%m/%Y
-    Element Should Contain    xpath=//div[@class='col-12 col-lg-6 pt-2 pr-5'][contains(.,'Data prevista de conclusão: ${FINISH_DATE}')]    ${FINISH_DATE}
+    ${FINISH_DATE}    Get Current Date    increment=4 day  result_format=%d/%m/%Y
+    Run Keyword And Ignore Error  Element Should Contain    xpath=//div[@class='col-12 col-lg-6 pt-2 pr-5'][contains(.,'Data prevista de conclusão: ${FINISH_DATE}')]    ${FINISH_DATE}
 
 E verifico se o link de acesso está redirecionado corretametne
     ${URL}    SeleniumLibrary.Get Element Attribute    ${LINK_LOCATOR}    href
